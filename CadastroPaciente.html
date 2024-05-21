@@ -72,7 +72,29 @@
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Cadastrar</button>
             </label>
-    
+<div>
+<p id = "tableBody"> </p>
+  </div>
+          
+<script> 
+          
+   function atualizarTabela() {
+   const tableBody = document.getElementById('tableBody');
+   tableBody.innerHTML = '';
+   listaClientes.forEach(item => {
+   const row = `<tr>
+                  <td>$(item.name)</td>
+                  <td>$(item.email)</td>
+                  <td>
+                    <button type = "button" class ="btn btn-danger btn-sm" onclick="deleteItem('${item.email}')">Excluir</button>
+                  </td>
+                 </tr>`;
+   tableBody.innerHTML += row;
+});
+
+}
+
+</script>
 
 </section>
 
